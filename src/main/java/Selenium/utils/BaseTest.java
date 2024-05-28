@@ -7,7 +7,8 @@ import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
 
-	public WebDriver driver;
+	public static WebDriver driver;
+	public BasePage app;
 	
 	@BeforeClass
 	public void setup() {
@@ -17,6 +18,8 @@ public class BaseTest {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://keybooks.ro/");
+		
+		app = new BasePage();
 		
 	}
 	

@@ -4,7 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class MenuPage {
+import Selenium.utils.SeleniumWrappers;
+
+public class MenuPage extends SeleniumWrappers{
 
 	public WebDriver driver;
 	public MenuPage(WebDriver driver) {
@@ -22,9 +24,9 @@ public class MenuPage {
 	//WebElement contactsButton = driver.findElement(By.linkText("CONTACTS"));
 	
 	//metode specifice functionalitatii pe care o au
-	public void navigateTo(By locator) {
+	/*public void navigateTo(By locator) {
 		driver.findElement(locator).click();
-	}
+	}*/
 	
 	//navigateTo(contactsLink)
 	//navigateTo(loginLink)
