@@ -80,5 +80,28 @@ public class XpathExample extends BaseTest{
 		 *  
 		 */
 		
+		//contains()
+		WebElement recentOrderLink = driver.findElement(
+				By.xpath("//a[contains(text(), 'recen')]"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background:yellow ;border:10px solid green')", 
+				recentOrderLink);
+		recentOrderLink.click();
+		
+		WebElement ordersTableLink = driver.findElement(
+				By.xpath("//th[contains(@class, 'orders-table__header')]/span[text()='Order']"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background:yellow ;border:10px solid green')", 
+				ordersTableLink);
+		//not()
+		WebElement dateTableHeader = driver.findElement(
+				By.xpath("//table//span[not(contains(text(), 'Order')) and not(contains(text(), 'Status')) and not(contains(@class, 'woocommerce')) and not(contains(text(), 'Total')) and not(contains(text(), 'Actions')) ]"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background:yellow ;border:10px solid green')", 
+				dateTableHeader);
+		//index
+		WebElement statusTableHeader = driver.findElement(By.xpath("(//span[@class='nobr'])[3]"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background:yellow ;border:10px solid green')", 
+				statusTableHeader);
+		
+		
+		
 	}
 }
