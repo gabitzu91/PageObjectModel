@@ -29,5 +29,37 @@ public class XpathExample2 extends BaseTest{
 				+ ""));
 		jse.executeScript("arguments[0].setAttribute('style', 'background:pink ;border:10px solid green')", 
 				loginForm);
+		
+		//child
+		WebElement user = driver.findElement(By.xpath("//ul//form/child::div/child::input[@name='log']"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background:yellow ;border:10px solid green')", 
+				user);
+		user.sendKeys("Testceva");
+		
+		/*
+		 * 
+		 * 
+		 * 
+		 * */
+		
+		WebElement pass = driver.findElement(By.xpath("//ul//input[@name='redirect_to']/following-sibling::div[contains(@class, 'pass')]/child::input"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background:yellow ;border:10px solid green')", 
+				pass);
+		pass.sendKeys("Nimic");
+		
+		WebElement forgotPass = driver.findElement(By.xpath("//ul//div[contains(@class, 'submit_field')]/preceding-sibling::div/child::a[@class='forgot_password']"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background:orange ;border:10px solid green')", 
+				forgotPass);
+		
+		WebElement rememberMe = driver.findElement(By.xpath("//a[text()='123-456-7890']/following::input[@id='rememberme']"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background:orange ;border:10px solid green')", 
+				rememberMe);
+		rememberMe.click();
+		
+		WebElement loginBtn = driver.findElement(By.xpath("//div[@class='top_panel_middle']/preceding::input[@value='Login']"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background:orange ;border:10px solid green')", 
+				loginBtn);
+		loginBtn.click();
+		
 	}
 }
