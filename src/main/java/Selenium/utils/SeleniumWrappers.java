@@ -43,8 +43,33 @@ public class SeleniumWrappers extends BaseTest{
 		}
 	}
 	
+	public void dragAndDrop(By locator, int x, int y) {
+		try {
+			Actions action = new Actions(driver);
+			action
+				.moveToElement(getWebElement(locator))
+				.clickAndHold()
+				.moveByOffset(x, y)
+				.release()
+				.perform();
+			//action.dragAndDropBy(getWebElement(locator),x,y).perform();
+		}catch(Exception e) {
+			new TestException(e.getMessage());
+		}
+	}
+	
 	public WebElement getWebElement(By locator) {
 		return driver.findElement(locator);
+	}
+	
+	public void scrollVertically(int pixels) {
+		Actions action = new Actions(driver);
+		action.scrollByAmount(0, pixels).perform();
+	}
+	
+	public void scrollHorizontally(int pixels) {
+		Actions action = new Actions(driver);
+		action.scrollByAmount(pixels, 0).perform();
 	}
 	
 }

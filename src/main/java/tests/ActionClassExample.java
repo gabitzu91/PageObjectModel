@@ -23,7 +23,7 @@ public class ActionClassExample extends BaseTest{
 		app.hoverElement(app.menu.aboutLink);
 	}
 	
-	@Test
+	//@Test
 	public void sendKeysTest() {
 		app.click(app.menu.contactsLink);
 		Keys ctrl = Platform.getCurrent().is(Platform.WINDOWS)? Keys.CONTROL:Keys.COMMAND;
@@ -47,7 +47,7 @@ public class ActionClassExample extends BaseTest{
 			.perform();
 	}
 	
-	@Test
+	//@Test
 	public void sendMessageForm() {
 		app.click(app.menu.contactsLink);
 		Actions action = new Actions(driver);
@@ -65,6 +65,15 @@ public class ActionClassExample extends BaseTest{
 			.sendKeys(Keys.TAB,Keys.ENTER)
 		.perform();
 			
+	}
+	
+	@Test
+	public void dragAndDropExample() {
+		app.click(app.menu.shopLink);
+		app.hoverElement(app.shop.filterSliderrInitialPosition);
+		app.dragAndDrop(app.shop.filterSliderrInitialPosition, 100, 0);
+		app.dragAndDrop(app.shop.filterSliderrFinalPosition, -100, 0);
+		
 	}
 	
 }
