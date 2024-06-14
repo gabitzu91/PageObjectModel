@@ -23,6 +23,9 @@ public class MenuPage extends SeleniumWrappers{
 	public By blogLink = By.linkText("BLOG");
 	public By aboutLink = By.linkText("ABOUT");
 	public By blogSubMenuClassic = By.linkText("Classic");
+	public By searchIcon = By.cssSelector("button[class*='icon-search']");
+	public By searchInput = By.cssSelector("input[class='search_field']");
+	
 	//WebElement loginButton = driver.findElement(By.linkText("Login"));
 	//WebElement contactsButton = driver.findElement(By.linkText("CONTACTS"));
 	
