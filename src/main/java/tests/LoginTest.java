@@ -14,7 +14,7 @@ public class LoginTest extends BaseTest{
 	String USER = PropertiesFileProcessor.readPropertiesFile("user", "credentials.Properties");
 	String PASS = PropertiesFileProcessor.readPropertiesFile("pass", "credentials.Properties");
 	
-	@Test(priority=1)
+	@Test(priority=1, groups="UserManagementFunctionality")
 	public void loginTest() throws InterruptedException {
 		MenuPage menu = new MenuPage(driver);
 		LoginPage login = new LoginPage(driver);
@@ -29,7 +29,7 @@ public class LoginTest extends BaseTest{
 		login.click(login.logoutBtn);
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2, groups="UserManagementFunctionality")
 	public void invalidloginTest() throws InterruptedException {
 		MenuPage menu = new MenuPage(driver);
 		LoginPage login = new LoginPage(driver);
